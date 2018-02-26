@@ -18,6 +18,7 @@
 		C271E8192043F1780045FA03 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E8182043F1780045FA03 /* APIService.swift */; };
 		C2802B172043F3FA0077BB2F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B162043F3FA0077BB2F /* Constant.swift */; };
 		C2802B192043F4B10077BB2F /* ContactListResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B182043F4B10077BB2F /* ContactListResponse.swift */; };
+		C2802B1E2043FAD10077BB2F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B1D2043FAD10077BB2F /* Contact.swift */; };
 		D73F889831731125A0CAF352 /* Pods_promisekitdemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D0A29E1F9E984765DC6CD /* Pods_promisekitdemoTests.framework */; };
 		EB0CAE2C610336B7C767EF47 /* Pods_promisekitdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA49BFAA900332F3AC49054A /* Pods_promisekitdemo.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +63,7 @@
 		C271E8182043F1780045FA03 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		C2802B162043F3FA0077BB2F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C2802B182043F4B10077BB2F /* ContactListResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactListResponse.swift; sourceTree = "<group>"; };
+		C2802B1D2043FAD10077BB2F /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		DA49BFAA900332F3AC49054A /* Pods_promisekitdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promisekitdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B82972359BB0380B968E32 /* Pods-promisekitdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promisekitdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promisekitdemo/Pods-promisekitdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F51D0A29E1F9E984765DC6CD /* Pods_promisekitdemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promisekitdemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +195,7 @@
 			children = (
 				C271E8182043F1780045FA03 /* APIService.swift */,
 				C2802B182043F4B10077BB2F /* ContactListResponse.swift */,
+				C2802B1D2043FAD10077BB2F /* Contact.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2802B1E2043FAD10077BB2F /* Contact.swift in Sources */,
 				C271E7E82043EFA40045FA03 /* AppDelegate.swift in Sources */,
 				C271E8192043F1780045FA03 /* APIService.swift in Sources */,
 				C271E8162043F0270045FA03 /* TableViewController.swift in Sources */,

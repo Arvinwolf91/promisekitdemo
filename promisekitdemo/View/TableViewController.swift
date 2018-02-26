@@ -15,19 +15,7 @@ class TableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        APIService.getContactList()
-            .then { response -> Void in
-                print(response)
-                
-                for (_,contact) in (response.contacts.enumerated()) {
-                    self.contacts.append(contact)
-                    self.tableView.reloadData()
-                }
-                
-            } .catch { error in
-                print(error)
-        }
+        getContactList()
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +41,22 @@ class TableViewController: UITableViewController {
     }
 }
 
-
-
+extension TableViewController {
+    
+    func getContactList() {
+        
+        APIService.getContactList()
+            .then { response -> Void in
+                
+                for (_,contact) in (response.contacts.enumerated()) {
+                    self.contacts.append(contact)
+                    self.tableView.reloadData()
+                }
+                
+            } .catch { error in
+                print(error)
+        }
+    }
+    
+}
 

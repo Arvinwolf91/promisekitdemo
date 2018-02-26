@@ -143,11 +143,9 @@
 		C271E7E62043EFA40045FA03 /* promisekitdemo */ = {
 			isa = PBXGroup;
 			children = (
-				C271E8152043F0270045FA03 /* TableViewController.swift */,
-				C271E8182043F1780045FA03 /* APIService.swift */,
-				C2802B182043F4B10077BB2F /* ContactListResponse.swift */,
-				C2802B162043F3FA0077BB2F /* Constant.swift */,
-				C271E7EB2043EFA40045FA03 /* Main.storyboard */,
+				C2802B1C2043F8BF0077BB2F /* View */,
+				C2802B1B2043F8A70077BB2F /* Service */,
+				C2802B1A2043F8850077BB2F /* Utility */,
 				C271E8172043F0DC0045FA03 /* Supporting Files */,
 			);
 			path = promisekitdemo;
@@ -180,6 +178,32 @@
 				C271E7F32043EFA40045FA03 /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C2802B1A2043F8850077BB2F /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				C2802B162043F3FA0077BB2F /* Constant.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		C2802B1B2043F8A70077BB2F /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C271E8182043F1780045FA03 /* APIService.swift */,
+				C2802B182043F4B10077BB2F /* ContactListResponse.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C2802B1C2043F8BF0077BB2F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C271E8152043F0270045FA03 /* TableViewController.swift */,
+				C271E7EB2043EFA40045FA03 /* Main.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

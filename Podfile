@@ -7,7 +7,7 @@ target 'promisekitdemo' do
 
   # Pods for promisekitdemo
 
- pod ‘Alamofire’
+ pod 'Alamofire'
  pod 'PromiseKit'
  pod 'ObjectMapper'
  pod 'SwiftyJSON'

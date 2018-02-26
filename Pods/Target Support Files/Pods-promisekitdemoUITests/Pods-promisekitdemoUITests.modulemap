@@ -1,0 +1,6 @@
+framework module Pods_promisekitdemoUITests {
+  umbrella header "Pods-promisekitdemoUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

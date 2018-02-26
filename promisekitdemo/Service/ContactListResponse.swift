@@ -9,23 +9,30 @@
 import UIKit
 import SwiftyJSON
 import Alamofire
+import ObjectMapper
 
 struct ContactListResponse {
     var contacts = [Contact]()
     
     init(responseJSON:JSON) {
-        let contactsJSON = responseJSON.dictionary!["contacts"]?.arrayValue
-        
-        for (_,contact) in (contactsJSON?.enumerated())! {
-            contacts.append(Contact(name: contact["name"].stringValue,
-                              email: contact["email"].stringValue,
-                              gender: contact["gender"].stringValue))
-        }
+        let contactsJSON = responseJSON.dictionary!["contacts"]?.arrayObject
+        contacts = Mapper<Contact>().mapArray(JSONObject: contactsJSON)!
     }
 }
 
-struct Contact {
-    var name:String
-    var email:String
-    var gender:String
+class Contact: Mappable {
+
+    var name = ""
+    var email = ""
+    var gender = ""
+
+    required init?(map: Map) {}
+
+    func mapping(map: Map) {
+        name <- map["name"]
+        email <- map["email"]
+        gender <- map["gender"]
+    }
 }
+
+

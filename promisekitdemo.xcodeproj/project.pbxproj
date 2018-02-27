@@ -14,10 +14,12 @@
 		C271E7F22043EFA40045FA03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C271E7F02043EFA40045FA03 /* LaunchScreen.storyboard */; };
 		C271E7FD2043EFA40045FA03 /* promisekitdemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E7FC2043EFA40045FA03 /* promisekitdemoTests.swift */; };
 		C271E8082043EFA40045FA03 /* promisekitdemoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E8072043EFA40045FA03 /* promisekitdemoUITests.swift */; };
-		C271E8162043F0270045FA03 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E8152043F0270045FA03 /* TableViewController.swift */; };
+		C271E8162043F0270045FA03 /* ContactTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E8152043F0270045FA03 /* ContactTableViewController.swift */; };
 		C271E8192043F1780045FA03 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C271E8182043F1780045FA03 /* APIService.swift */; };
 		C2802B172043F3FA0077BB2F /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B162043F3FA0077BB2F /* Constant.swift */; };
 		C2802B1E2043FAD10077BB2F /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B1D2043FAD10077BB2F /* Contact.swift */; };
+		C2802B20204528A20077BB2F /* RepoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B1F204528A20077BB2F /* RepoTableViewController.swift */; };
+		C2802B22204529C10077BB2F /* Repo.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2802B21204529C10077BB2F /* Repo.swift */; };
 		D73F889831731125A0CAF352 /* Pods_promisekitdemoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F51D0A29E1F9E984765DC6CD /* Pods_promisekitdemoTests.framework */; };
 		EB0CAE2C610336B7C767EF47 /* Pods_promisekitdemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA49BFAA900332F3AC49054A /* Pods_promisekitdemo.framework */; };
 /* End PBXBuildFile section */
@@ -58,10 +60,12 @@
 		C271E8032043EFA40045FA03 /* promisekitdemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = promisekitdemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C271E8072043EFA40045FA03 /* promisekitdemoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = promisekitdemoUITests.swift; sourceTree = "<group>"; };
 		C271E8092043EFA40045FA03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C271E8152043F0270045FA03 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C271E8152043F0270045FA03 /* ContactTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactTableViewController.swift; sourceTree = "<group>"; };
 		C271E8182043F1780045FA03 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		C2802B162043F3FA0077BB2F /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		C2802B1D2043FAD10077BB2F /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		C2802B1F204528A20077BB2F /* RepoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewController.swift; sourceTree = "<group>"; };
+		C2802B21204529C10077BB2F /* Repo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Repo.swift; sourceTree = "<group>"; };
 		DA49BFAA900332F3AC49054A /* Pods_promisekitdemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promisekitdemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6B82972359BB0380B968E32 /* Pods-promisekitdemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-promisekitdemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-promisekitdemo/Pods-promisekitdemo.debug.xcconfig"; sourceTree = "<group>"; };
 		F51D0A29E1F9E984765DC6CD /* Pods_promisekitdemoTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_promisekitdemoTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -193,6 +197,7 @@
 			children = (
 				C271E8182043F1780045FA03 /* APIService.swift */,
 				C2802B1D2043FAD10077BB2F /* Contact.swift */,
+				C2802B21204529C10077BB2F /* Repo.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -200,7 +205,8 @@
 		C2802B1C2043F8BF0077BB2F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				C271E8152043F0270045FA03 /* TableViewController.swift */,
+				C271E8152043F0270045FA03 /* ContactTableViewController.swift */,
+				C2802B1F204528A20077BB2F /* RepoTableViewController.swift */,
 				C271E7EB2043EFA40045FA03 /* Main.storyboard */,
 			);
 			path = View;
@@ -505,10 +511,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2802B22204529C10077BB2F /* Repo.swift in Sources */,
 				C2802B1E2043FAD10077BB2F /* Contact.swift in Sources */,
+				C2802B20204528A20077BB2F /* RepoTableViewController.swift in Sources */,
 				C271E7E82043EFA40045FA03 /* AppDelegate.swift in Sources */,
 				C271E8192043F1780045FA03 /* APIService.swift in Sources */,
-				C271E8162043F0270045FA03 /* TableViewController.swift in Sources */,
+				C271E8162043F0270045FA03 /* ContactTableViewController.swift in Sources */,
 				C2802B172043F3FA0077BB2F /* Constant.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

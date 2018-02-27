@@ -11,20 +11,17 @@ import SwiftyJSON
 import Alamofire
 import ObjectMapper
 
-struct ContactListResponse {
+class Contact: Mappable {
+
+    var name = ""
+    var email = ""
+    var gender = ""
     var contacts = [Contact]()
     
     init(responseJSON:JSON) {
         let contactsJSON = responseJSON.dictionary!["contacts"]?.arrayObject
         contacts = Mapper<Contact>().mapArray(JSONObject: contactsJSON)!
     }
-}
-
-class Contact: Mappable {
-
-    var name = ""
-    var email = ""
-    var gender = ""
 
     required init?(map: Map) {}
 

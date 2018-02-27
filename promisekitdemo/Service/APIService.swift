@@ -13,7 +13,7 @@ import SwiftyJSON
 
 class APIService {
     
-    class func getContactList() -> Promise<ContactListResponse> {
+    class func getContactList() -> Promise<Contact> {
         
         return Promise { fulfill, reject in
             
@@ -23,8 +23,8 @@ class APIService {
                 case .success(let value):
                     let responseJSON = JSON(value)
                     
-                    let contactListResponse = ContactListResponse(responseJSON: responseJSON)
-                    fulfill(contactListResponse)
+                    let contacts = Contact(responseJSON: responseJSON)
+                    fulfill(contacts)
                     
                 case .failure(let error):
                     reject(error)

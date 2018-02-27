@@ -15,12 +15,21 @@ class RepoTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getRepoList()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func showRepoOne(_ sender: Any) {
+        self.repos.removeAll()
+        getRepoListOne()
+    }
+    
+    @IBAction func showRepoTwo(_ sender: Any) {
+        self.repos.removeAll()
+        getRepoListTwo()
     }
     
     // MARK: - Table view data source
@@ -43,9 +52,24 @@ class RepoTableViewController: UITableViewController {
 
 extension RepoTableViewController {
     
-    func getRepoList() {
+    func getRepoListOne() {
         
-        APIService.getRepoList()
+        APIService.request(router: .getAlexGrayRepos)
+            .then { response -> Void in
+                
+                for (_,repo) in (response.repos.enumerated()) {
+                    self.repos.append(repo)
+                    self.tableView.reloadData()
+                }
+                
+            } .catch { error in
+                print(error)
+        }
+    }
+    
+    func getRepoListTwo() {
+        
+        APIService.request(router: .getArvinWolf91Repos)
             .then { response -> Void in
                 
                 for (_,repo) in (response.repos.enumerated()) {

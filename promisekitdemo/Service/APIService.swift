@@ -12,68 +12,21 @@ import PromiseKit
 import SwiftyJSON
 
 enum Router {
-    case getContacts
+    case getAlexGrayRepos
+    case getArvinWolf91Repos
 }
-
-enum RouterB {
-    case getRepos
-}
-
+    
 class APIService {
     
-    class func getContactList() -> Promise<Contact> {
+    class func request(router:Router) -> Promise<Repo> {
         
         return Promise { fulfill, reject in
             
-            var BASE_URL: String {
-                let router = Router.getContacts
-                switch router {
-                case .getContacts:
-                    return "http://api.androidhive.info/"
-                }
-            }
-            
             var PATH: String {
-                let router = Router.getContacts
                 switch router {
-                case .getContacts:
-                    return "contacts"
-                }
-            }
-            
-            Alamofire.request("\(BASE_URL)\(PATH)").responseJSON { response in
-                
-                switch response.result {
-                case .success(let value):
-                    let responseJSON = JSON(value)
-                    
-                    let contacts = Contact(responseJSON: responseJSON)
-                    fulfill(contacts)
-                    
-                case .failure(let error):
-                    reject(error)
-                }
-            }
-                
-            }
-        }
-    
-    class func getRepoList() -> Promise<Repo> {
-        
-        return Promise { fulfill, reject in
-            
-            var BASE_URL: String {
-                let router = RouterB.getRepos
-                switch router {
-                case .getRepos:
-                    return "https://api.github.com/users/"
-                }
-            }
-            
-            var PATH: String {
-                let router = RouterB.getRepos
-                switch router {
-                case .getRepos:
+                case .getAlexGrayRepos:
+                    return "mralexgray/repos"
+                case .getArvinWolf91Repos:
                     return "arvinwolf91/repos"
                 }
             }
@@ -94,5 +47,5 @@ class APIService {
             
         }
     }
-
+    
 }

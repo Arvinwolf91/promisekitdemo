@@ -8,4 +8,5 @@
 
 import UIKit
 
+let BASE_URL = "https://api.github.com/users/"
 

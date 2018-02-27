@@ -9,4 +9,3 @@
 import UIKit
 
 let BASE_URL = "http://api.androidhive.info/"
-let PATH = "contacts/"

@@ -11,11 +11,24 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
+enum Router {
+    case getContacts
+}
+
 class APIService {
     
     class func getContactList() -> Promise<Contact> {
         
         return Promise { fulfill, reject in
+
+        
+            var PATH: String {
+                let router = Router.getContacts
+                switch router {
+                case .getContacts:
+                    return "contacts/"
+                }
+            }
             
             Alamofire.request("\(BASE_URL)\(PATH)").responseJSON { response in
                 
@@ -30,7 +43,8 @@ class APIService {
                     reject(error)
                 }
             }
+                
+            }
         }
-    }
 
 }

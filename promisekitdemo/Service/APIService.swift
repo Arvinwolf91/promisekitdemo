@@ -11,19 +11,19 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
-enum Router {
+enum Action {
     case getAlexGrayRepos
     case getArvinWolf91Repos
 }
     
 class APIService {
     
-    class func request(router:Router) -> Promise<Repo> {
+    class func request(action:Action) -> Promise<Repo> {
         
         return Promise { fulfill, reject in
             
             var PATH: String {
-                switch router {
+                switch action {
                 case .getAlexGrayRepos:
                     return "mralexgray/repos"
                 case .getArvinWolf91Repos:

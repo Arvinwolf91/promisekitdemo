@@ -23,12 +23,12 @@ class RepoTableViewController: UITableViewController {
     }
     
     @IBAction func showRepoOne(_ sender: Any) {
-        self.repos.removeAll()
+        repos.removeAll()
         getRepoListOne()
     }
     
     @IBAction func showRepoTwo(_ sender: Any) {
-        self.repos.removeAll()
+        repos.removeAll()
         getRepoListTwo()
     }
     
@@ -54,7 +54,7 @@ extension RepoTableViewController {
     
     func getRepoListOne() {
         
-        APIService.request(router: .getAlexGrayRepos)
+        APIService.request(action: .getAlexGrayRepos)
             .then { response -> Void in
                 
                 for (_,repo) in (response.repos.enumerated()) {
@@ -69,7 +69,7 @@ extension RepoTableViewController {
     
     func getRepoListTwo() {
         
-        APIService.request(router: .getArvinWolf91Repos)
+        APIService.request(action: .getArvinWolf91Repos)
             .then { response -> Void in
                 
                 for (_,repo) in (response.repos.enumerated()) {

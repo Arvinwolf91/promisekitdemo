@@ -11,41 +11,26 @@ import Alamofire
 import PromiseKit
 import SwiftyJSON
 
-enum Action {
-    case getAlexGrayRepos
-    case getArvinWolf91Repos
-}
-    
+
 class APIService {
     
-    class func request(action:Action) -> Promise<Repo> {
+    class func request(request:Request) -> Promise<BaseResponse> {
         
         return Promise { fulfill, reject in
             
-            var PATH: String {
-                switch action {
-                case .getAlexGrayRepos:
-                    return "mralexgray/repos"
-                case .getArvinWolf91Repos:
-                    return "arvinwolf91/repos"
-                }
-            }
-            
-            Alamofire.request("\(BASE_URL)\(PATH)").responseJSON { response in
+            Alamofire.request(request.Endpoint).responseJSON { response in
                 
                 switch response.result {
                 case .success(let value):
                     let responseJSON = JSON(value)
                     
-                    let repos = Repo(responseJSON: responseJSON)
-                    fulfill(repos)
+                    let baseResponse = BaseResponse(responseJSON: responseJSON, request:request)
+                    fulfill(baseResponse)
                     
                 case .failure(let error):
                     reject(error)
                 }
             }
-            
         }
     }
-    
 }

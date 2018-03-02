@@ -50,12 +50,12 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="WqI-ZY-lZ6">
-                        <barButtonItem key="leftBarButtonItem" title="Repo1" id="thV-Ce-Yny">
+                        <barButtonItem key="leftBarButtonItem" title="RepoA" id="thV-Ce-Yny">
                             <connections>
                                 <action selector="showRepoOne:" destination="4Ge-2t-T3z" id="x0V-Ua-8fU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Repo2" id="s2q-eU-JPQ">
+                        <barButtonItem key="rightBarButtonItem" title="RepoB" id="s2q-eU-JPQ">
                             <connections>
                                 <action selector="showRepoTwo:" destination="4Ge-2t-T3z" id="VMr-2R-Tzq"/>
                             </connections>

@@ -8,5 +8,17 @@
 
 import UIKit
 
-let BASE_URL = "https://api.github.com/users/"
+enum Request {
+    case getAlexGrayRepos
+    case getArvinWolf91Repos
+    
+    var Endpoint: String {
+        switch self {
+        case .getAlexGrayRepos:
+            return "https://api.github.com/users/mralexgray/repos"
+        case .getArvinWolf91Repos:
+            return "https://api.github.com/users/arvinwolf91/repos"
+        }
+    }
+}
 

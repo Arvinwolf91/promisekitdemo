@@ -7,27 +7,17 @@
 //
 
 import UIKit
-import SwiftyJSON
 import ObjectMapper
 
-class Repo: Mappable {
+class RepositoryA: Mappable {
     
-    var id = ""
     var name = ""
     var full_name = ""
-    var repos = [Repo]()
-    
-    init(responseJSON:JSON) {
-        repos = Mapper<Repo>().mapArray(JSONObject: responseJSON.arrayObject)!
-    }
     
     required init?(map: Map) {}
     
     func mapping(map: Map) {
-        id <- map["id"]
         name <- map["name"]
         full_name <- map["full_name"]
     }
 }
-
-

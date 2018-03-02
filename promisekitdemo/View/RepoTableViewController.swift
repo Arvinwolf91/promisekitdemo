@@ -11,7 +11,9 @@ import PromiseKit
 
 class RepoTableViewController: UITableViewController {
     
-    var repos = [Repo]()
+    var reposA = [RepositoryA]()
+    var reposB = [RepositoryB]()
+    var showRepositoryA:Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,13 +25,15 @@ class RepoTableViewController: UITableViewController {
     }
     
     @IBAction func showRepoOne(_ sender: Any) {
-        repos.removeAll()
-        getRepoListOne()
+        showRepositoryA = true
+        reposB.removeAll()
+        getRepositoryA()
     }
     
     @IBAction func showRepoTwo(_ sender: Any) {
-        repos.removeAll()
-        getRepoListTwo()
+        showRepositoryA = false
+        reposA.removeAll()
+        getRepositoryB()
     }
     
     // MARK: - Table view data source
@@ -39,26 +43,37 @@ class RepoTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return repos.count
+        if showRepositoryA {
+            return reposA.count
+        } else {
+            return reposB.count
+        }
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = repos[indexPath.row].name
-        cell.detailTextLabel?.text = repos[indexPath.row].full_name
+        
+        if showRepositoryA {
+            cell.textLabel?.text = reposA[indexPath.row].name
+            cell.detailTextLabel?.text = reposA[indexPath.row].full_name
+        } else {
+            cell.textLabel?.text = reposB[indexPath.row].name
+            cell.detailTextLabel?.text = ""
+        }
+        
         return cell
     }
 }
 
 extension RepoTableViewController {
     
-    func getRepoListOne() {
+    func getRepositoryA() {
         
-        APIService.request(action: .getAlexGrayRepos)
+        APIService.request(request: .getAlexGrayRepos)
             .then { response -> Void in
                 
-                for (_,repo) in (response.repos.enumerated()) {
-                    self.repos.append(repo)
+                for (_,repo) in (response.reposA.enumerated()) {
+                    self.reposA.append(repo)
                     self.tableView.reloadData()
                 }
                 
@@ -67,13 +82,13 @@ extension RepoTableViewController {
         }
     }
     
-    func getRepoListTwo() {
+    func getRepositoryB() {
         
-        APIService.request(action: .getArvinWolf91Repos)
+        APIService.request(request: .getArvinWolf91Repos)
             .then { response -> Void in
                 
-                for (_,repo) in (response.repos.enumerated()) {
-                    self.repos.append(repo)
+                for (_,repo) in (response.reposB.enumerated()) {
+                    self.reposB.append(repo)
                     self.tableView.reloadData()
                 }
                 
